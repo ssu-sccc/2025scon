@@ -1,0 +1,25 @@
+\def\probno{B}
+\def\probtitle{합의 최소}
+
+\section{\probno{}. \probtitle{}}
+
+\begin{frame} % No title at first slide
+    \sectiontitle{\probno{}}{\probtitle{}}
+    \sectionmeta{
+        \texttt{math}\\
+        출제진 의도 -- \textbf{\color{acbronze}Easy}
+    }
+    \begin{itemize}
+        \item 처음 푼 팀: \textbf{말안되네}, 5분
+        \item 문제 아이디어: 진민성
+        \item 문제 작업: 진민성
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\probno{}. \probtitle{}}
+    \begin{itemize}
+        \item $i$번째 수로 가능한 가장 작은 값은 $\min(A_i, A_{i+1},\cdots,A_N)$입니다.
+        \item 따라서 수열 $B_i = \min(A_i, A_{i+1}, \cdots, A_N)$를 빠르게 구하면 문제를 해결할 수 있습니다.
+        \item $i$를 $N-1$부터 $1$까지 순회하면서 $B_i = \min(B_{i+1}, A_i)$를 계산하면 됩니다.
+    \end{itemize}
+\end{frame}

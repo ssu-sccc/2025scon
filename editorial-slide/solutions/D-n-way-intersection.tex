@@ -1,0 +1,34 @@
+\def\probno{D}
+\def\probtitle{N거리 건너기}
+
+\section{\probno{}. \probtitle{}}
+
+\begin{frame} % No title at first slide
+    \sectiontitle{\probno{}}{\probtitle{}}
+    \sectionmeta{
+        \texttt{implementation}\\
+        출제진 의도 -- \textbf{\color{acsilver}Medium}
+    }
+    \begin{itemize}
+        \item 처음 푼 팀: \textbf{1학년1학기ps쌩초보3인큐}, 57분
+        \item 문제 아이디어: 김한결
+        \item 문제 작업: 김한결
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\probno{}. \probtitle{}}
+    \begin{itemize}
+        \item 시계 방향과 반시계 방향으로 이동할 때의 소요 시간을 각각 구한 뒤 비교하면 됩니다.
+        \item 문제에서 주어진 수열 $A$에서 $x$번 횡단보도가 등장하는 위치를 $P_x$라고 합시다.
+        \item 즉, $P_x$는 $x$번 횡단보도의 초록불이 켜지는 순서를 의미합니다.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\probno{}. \probtitle{}}
+    \begin{itemize}
+        \item 바로 이전에 건넌 횡단보도의 번호를 $i$, 다음에 건너야 하는 횡단보도의 번호를 $j$라고 합시다.
+        \item $P_i < P_j$라면 $P_j - P_i$초 뒤에 다음 횡단보도를 건널 수 있습니다.
+        \item $P_i > P_j$라면 $A_{P_i+1}, A_{P_i+2}, \cdots, A_N, A_1, \cdots, A_{P_j}$번 신호등을 차례로 기다려야 하므로 $N-(P_i-P_j)$초 뒤에 건널 수 있습니다.
+        \item 대기 시간을 매번 상수 시간에 계산할 수 있으므로 전체 시간 복잡도는 $O(N)$입니다.
+    \end{itemize}
+\end{frame}

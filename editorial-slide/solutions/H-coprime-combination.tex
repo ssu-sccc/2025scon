@@ -1,0 +1,40 @@
+\def\probno{H}
+\def\probtitle{서로소 조합}
+
+\section{\probno{}. \probtitle{}}
+
+\begin{frame} % No title at first slide
+    \sectiontitle{\probno{}}{\probtitle{}}
+    \sectionmeta{
+        \texttt{math, number\_theory}\\
+        출제진 의도 -- \textbf{\color{acgold}Hard}
+    }
+    \begin{itemize}
+        \item 처음 푼 팀: \textbf{1학년1학기ps쌩초보3인큐}, 158분
+        \item 문제 아이디어: 최도현
+        \item 문제 작업: 이창민
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\probno{}. \probtitle{}}
+    \begin{itemize}
+        \item 첫 번째로 주어진 조합을 $C_1$, 두 번째로 주어진 조합을 $C_2$라고 합시다.
+        \item $C_1$과 $C_2$를 직접 계산하여 최대 공약수가 1인지 확인하기에는 수가 너무 커질 수 있습니다.
+        \vspace{3mm}
+        \item $n!$는 $n$ 이하의 소수의 곱으로 표현할 수 있다는 사실을 이용합시다.
+        \item $0!$부터 $5000!$까지를 소인수분해했을 때 특정 소수가 몇 번 곱해졌는지를 구할 수 있다면\\
+        $C_1$과 $C_2$의 소인수와 그 소인수가 몇 번 곱해졌는지를 뺄셈을 통해 구할 수 있습니다.
+        % \item 구체적으로는, 조합에서 어떤 소수 $p$가 몇 번 곱해졌는지는 ($n!$에서 $p$의 개수) - ($k!$에서 $p$의 개수) - ($(n-k)!$에서 $p$의 개수)로 계산할 수 있고, 걸리는 시간은 $O(1)$입니다.
+        \item 어떤 소수가 $C_1$의 소인수이면서 $C_2$의 소인수라면 두 조합은 서로소가 아닙니다.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\probno{}. \probtitle{}}
+    \begin{itemize}
+        \item $5000$이하의 소수의 개수를 $P$라고 합시다.
+        \item $n!$을 소인수분해 할 때는 $(n-1)!$을 소인수분해 한 결과와 $n$을 소인수분해 한 결과를 더해서 구할 수 있습니다.
+        \item $0!$부터 $5000!$까지 팩토리얼을 소인수분해하는데 걸리는 시간은 $O(5000P + S)$이며, 여기서 $S$는 $0$부터 $5000$까지를 소인수분해하는데 걸리는 시간입니다.
+        \item 쿼리마다 $O(P)$의 시간이 걸리므로, $Q$개의 쿼리를 처리하는데 걸리는 시간은 $O(PQ)$입니다.
+        \item 따라서, 전체 시간 복잡도는 $O(5000P + S + PQ)$입니다. 구현을 간단하게 하기 위해 $P$ 대신 $5000$을 사용해도 괜찮습니다.
+    \end{itemize}
+\end{frame}

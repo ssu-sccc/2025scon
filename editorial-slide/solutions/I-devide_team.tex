@@ -1,0 +1,65 @@
+\def\probno{I}
+\def\probtitle{대결}
+
+\section{\probno{}. \probtitle{}}
+
+\begin{frame} % No title at first slide
+    \sectiontitle{\probno{}}{\probtitle{}}
+    \sectionmeta{
+        \texttt{ad\_hoc, prefix\_sum}\\
+        출제진 의도 -- \textbf{\color{acgold}Hard}
+    }
+    \begin{itemize}
+        \item 처음 푼 팀: \textbf{와장창특공대}, 111분
+        % \item 처음 푼 팀(Open Contest): \textbf{Lawali}, 22분
+        \item 문제 아이디어: 조문성
+        \item 문제 작업: 조문성
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\probno{}. \probtitle{}}
+    \begin{itemize}
+        \item 먼저 $T_i$를 다음과 같이 정의합니다: 
+        \[
+        T_i = \begin{cases}
+        B_i, & \text{if } A_i = 1 \\
+        -B_i, & \text{otherwise}
+        \end{cases}
+        \]
+        \item 이때 [1번 팀 점수 - 0번 팀 점수]는 $T_i$의 구간 합을 이용해 표현할 수 있습니다.
+        \item 이를 ``점수 차"라고 부르겠습니다.
+        \item $T_i$의 $[l, r]$ 구간 합을 $S[l : r]$이라고 정의합시다.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\probno{}. \probtitle{}}
+    \begin{itemize}
+        \item 이제 $K$개의 라운드로 분할된 구간 
+        \[
+        [1, \dots, i_1],\ [i_1 + 1, \dots, i_2],\ \dots,\ [i_{k-1} + 1, \dots, i_k = N]
+        \]
+        을 생각해 봅시다.
+        \item 이때 점수 차는 다음과 같습니다:  
+        \[
+        S[1 : i_1] + 2 \cdot S[i_1 + 1 : i_2] + \dots + K \cdot S[i_{k-1} + 1 : i_k]
+        \]
+        \item 이 점수를 다시 쓰면 다음과 같이 표현할 수 있습니다:  
+        \[
+        S[1 : N] + S[i_1 + 1 : N] + \dots + S[i_{k-1} + 1 : N]
+        \]
+        \item 즉, 점수 차는 $T_i$의 접미사 구간 합들의 합으로 표현할 수 있습니다.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\probno{}. \probtitle{}}
+    \begin{itemize}
+        \item 이제 점수 차를 어떻게 하면 최대화할 수 있을까요?
+        \item $K$개의 라운드로 구성했을 때 얻는 점수 차는 
+        \[
+        S[1 : N],\ S[2 : N],\ \dots,\ S[N : N]
+        \]
+        중 $K$개를 골라 더한 값입니다. (단, $S[1 : N]$은 반드시 포함돼야 합니다.)
+        \item 점수 차를 최대화하려면, 이들 중 양수인 값만 모두 더하면 됩니다. 이때 양수의 개수가 곧 라운드의 개수 $K$가 됩니다.
+        \item $T_i$와 $T_i$의 접미사 누적합을 구한 뒤, 양수만 골라 더하는 방식으로 $\mathcal{O}(N)$에 문제를 해결할 수 있습니다.
+    \end{itemize}
+\end{frame}

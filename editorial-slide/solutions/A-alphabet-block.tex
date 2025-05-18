@@ -1,0 +1,26 @@
+\def\probno{A}
+\def\probtitle{알파벳 블록}
+
+\section{\probno{}. \probtitle{}}
+
+\begin{frame} % No title at first slide
+    \sectiontitle{\probno{}}{\probtitle{}}
+    \sectionmeta{
+        \texttt{math}\\
+        출제진 의도 -- \textbf{\color{acbronze}Easy}
+    }
+    \begin{itemize}
+        \item 처음 푼 팀: \textbf{JJJ}, 2분
+        \item 문제 아이디어: 최도현
+        \item 문제 작업: 최도현
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\probno{}. \probtitle{}}
+    \begin{itemize}
+        \item 상자 1개에는 S가 2개, C가 4개, O가 1개, N이 1개 필요합니다.
+        \item 서로 교환 가능한 블록끼리는 하나의 블록으로 통일해서 생각하면 쉽습니다.
+        \item N과 O를 각각 S와 C로 교환하면, S 3개와 C 6개를 이용해 상자를 구성할 수 있습니다.
+        \item 따라서 정답은 $\min(\lfloor \frac{b_S + b_N}{3} \rfloor, \lfloor \frac{b_C + 2b_O}{6} \rfloor)$이 됩니다.
+    \end{itemize}
+\end{frame}

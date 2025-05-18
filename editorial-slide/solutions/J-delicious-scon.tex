@@ -1,0 +1,80 @@
+\def\probno{J}
+\def\probtitle{맛있는 스콘 만들기}
+
+\section{\probno{}. \probtitle{}}
+
+\begin{frame} % No title at first slide
+    \sectiontitle{\probno{}}{\probtitle{}}
+    \sectionmeta{
+        \texttt{dp, data\_structures}\\
+        출제진 의도 -- \textbf{\color{acplatinum}Challenging}
+    }
+    \begin{itemize}
+        \item 처음 푼 팀: \textbf{N/A}, N/A분
+        % \item 처음 푼 팀(Open Contest): \textbf{핸들}, N/A분
+        \item 문제 아이디어: 최도현
+        \item 문제 작업: 최도현
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\probno{}. \probtitle{}}
+    \begin{itemize}
+        \item $t-1$초의 각 온도에서 스콘의 맛의 최댓값을 알고 있다면 $t$초의 각 온도에서 맛의 최댓값 역시 결정할 수 있으므로 동적 계획법으로 해결할 수 있습니다.
+        \item $dp[t][i]$ : $t$초에서 오븐의 온도가 $i$일 때 스콘의 맛의 최댓값으로 두고 풀이할 수 있습니다.
+        \vspace{3mm}
+        \item 우선 $C$ 조건을 고려하지 않고 생각해 봅시다.
+        \item $D$ 조건은 $dp[t-1]$에서 가져올 수 있는 온도의 구간을 $[i-D, i+D]$로 제한합니다.
+        \item $i$에서 $i+1$로 바뀌었다면 구간은 $[i-D+1, i+D+1]$로 바뀌고, $i-D$에 있는 값은 사라지며, $i+D+1$에 있는 값이 추가됩니다.
+        \item 특정 값의 삭제와 삽입이 가능하면서 최댓값을 빠르게 구할 수 있는 자료구조를 사용하면 문제를 해결할 수 있습니다.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\probno{}. \probtitle{}}
+    \begin{itemize}
+        \item 모든 $i$에 대해 $[i-D, i+D]$에서 최댓값을 구할 때는 다음과 같은 방법을 사용할 수 있습니다.
+        \begin{enumerate}
+            \item $1$에서 $M$으로 진행하면서 $[i-D, i]$의 최댓값을 구하고, $M$에서 $1$로 진행하면서 $[i, i+D]$의 최댓값을 구한다.
+            \item $1$에서 $M$으로 진행하면서 한 번에 $[i-D, i+D]$의 최댓값을 구한다.
+        \end{enumerate}
+        \vspace{3mm}
+        \item 해설에서는 $1$번 방법에서 $[i-D, i]$의 최댓값을 구하는 방법만 설명합니다.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\probno{}. \probtitle{}}
+    \begin{itemize}
+        \item 이제 $C$ 조건을 추가해 봅시다.
+        \item $C$개의 자료구조를 만들고, 각각을 $0$번부터 $C-1$번까지 번호를 붙여 구분하겠습니다.
+        \item $1$에서 $M$으로 진행하면서 $i$일 때, $i\%C$번 자료구조에 $dp[t-1][i]$에 해당하는 값 또는 원소를 삽입합니다.
+        \item 최댓값 역시 $i\%C$번 자료구조에서 가져옵니다.
+        \vspace{3mm}
+        \item 이후 페이지에선 자료구조 별로 어떻게 구간 내의 값들을 관리하는지 설명합니다.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\probno{}. \probtitle{ - 덱}}
+    \begin{itemize}
+        \item 덱의 back에 (온도, 맛) 쌍을 가지는 원소를 삽입합니다.
+        \item 이때, 삽입하려는 원소보다 덱의 back에 있는 원소의 맛이 더 클 때까지 back에 있는 원소를 삭제합니다.
+        \item 덱의 front에는 맛의 최댓값이 들어있으며, 덱에 들어있는 원소들의 맛은 단조 감소합니다.
+        \item 만약, front에 있는 원소의 온도가 $[i-D, i]$를 벗어났다면 front의 원소를 삭제하면 됩니다.
+        \item 시간 복잡도는 $O(NM)$입니다.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\probno{}. \probtitle{ - 우선순위 큐}}
+    \begin{itemize}
+        \item (온도, 맛) 쌍을 가지며 맛이 클수록 우선순위가 높은 우선순위 큐를 만들어줍니다.
+        \item 최댓값을 가져올 때, 온도가 $[i-D, i]$를 벗어났다면 해당 원소를 삭제하면 됩니다. 
+        \item 시간 복잡도는 $O(NM\log M)$입니다
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\probno{}. \probtitle{ - multiset, map}}
+    \begin{itemize}
+        \item 온도로 삭제 여부를 판단하는 것이 아닌 값 자체를 삭제하는 것도 고려해볼 수 있습니다.
+        \item $[i-D, i]$에서 최댓값을 가져온 후, $dp[t-1][i-D]$에 해당하는 값은 더 이상 사용하지 않으므로 삭제하면 됩니다.
+        \item multiset 또는 map을 사용하면 특정 값의 삽입/삭제가 가능하며, 최댓값도 구할 수 있습니다.
+        \item 시간 복잡도는 $O(NM\log M)$입니다
+    \end{itemize}
+\end{frame}

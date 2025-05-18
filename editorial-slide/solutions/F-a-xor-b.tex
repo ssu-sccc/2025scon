@@ -1,0 +1,43 @@
+\def\probno{F}
+\def\probtitle{A = B $\oplus$ C}
+
+\section{\probno{}. \probtitle{}}
+
+\begin{frame} % No title at first slide
+    \sectiontitle{\probno{}}{\probtitle{}}
+    \sectionmeta{
+        \texttt{math, dp}\\
+        출제진 의도 -- \textbf{\color{acsilver}Medium}
+    }
+    \begin{itemize}
+        \item 처음 푼 팀: \textbf{와장창특공대}, 105분
+        \item 문제 아이디어: 김서윤
+        \item 문제 작업: 김서윤
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\probno{}. \probtitle{}}
+    \begin{itemize}
+        \item $A_{3k-2}, A_{3k-1}, A_{3k}$의 값을 결정하는 방법은 4가지입니다.
+        \begin{enumerate}
+            \item $0 \oplus 0 = 0$
+            \item $0 \oplus 1 = 1$
+            \item $1 \oplus 0 = 1$
+            \item $1 \oplus 1 = 0$
+        \end{enumerate}
+        \vspace{3mm}
+        \item 1을 2개, 0을 1개 사용하는 방법이 3가지, 0만 3개 사용하는 방법이 1가지입니다.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\probno{}. \probtitle{}}
+    \begin{itemize}
+        \item 따라서 1이 $x$개, 0이 $y$개 있을 때 만들 수 있는 수열의 개수 $f(x, y)$는 다음과 같이 계산할 수 있습니다.
+        $$f(x, y) = \begin{cases}
+        0 & \text{if } x < 0 \text{ or } y < 0 \\
+        1 & \text{if } x = y = 0 \\
+        3f(x-2, y-1) + f(x, y-3) & \text{otherwise}
+        \end{cases}$$
+        \item 따라서 동적 계획법을 이용하면 $O(XY)$ 시간에 문제를 해결할 수 있습니다.
+    \end{itemize}
+\end{frame}

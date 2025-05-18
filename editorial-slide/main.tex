@@ -1,0 +1,144 @@
+\include{header}
+\usetikzlibrary{arrows.meta,matrix,decorations.pathreplacing}
+
+\title{2025 SCON}
+\subtitle{}
+\author{Official Solutions}
+\date{2025년 5월 17일}
+
+\begin{document}
+    \setcounter{framenumber}{-1}
+    \frame{\titlepage}
+
+    \begin{frame} %
+        \textbf{주최} %
+        \begin{itemize}
+            \item 숭실대학교 IT대학
+        \end{itemize}
+        \vspace{3mm}
+        \textbf{주관} %
+        \begin{itemize}
+            \item 컴퓨터학부 문제해결 소모임 SCCC
+        \end{itemize}
+        \vspace{3mm}
+        \textbf{운영} %
+        \begin{itemize}
+            \item 조문성 \tabto{1.2cm} \texttt{jms020820} \tabto{8cm} {\color{gray} 숭실대학교 컴퓨터학부}
+            \item 진민성 \tabto{1.2cm} \texttt{m4ushold} \tabto{8cm} {\color{gray} 숭실대학교 소프트웨어학부}
+            \item 나정휘 \tabto{1.2cm} \texttt{jhnah917} \tabto{8cm} {\color{gray} Quora}
+            \item 김서윤 \tabto{1.2cm} \texttt{moonlit} \tabto{8cm} {\color{gray} 숭실대학교 컴퓨터학부}
+        \end{itemize}
+    \end{frame}
+    
+    \begin{frame}
+        \textbf{출제} %
+        \begin{itemize}
+            \item 김서윤 \tabto{1.2cm} \texttt{moonlit} \tabto{8cm} {\color{gray} 숭실대학교 컴퓨터학부}
+            \item 김한결 \tabto{1.2cm} \texttt{rkaskan506} \tabto{8cm} {\color{gray} 숭실대학교 컴퓨터학과}
+            \item 박근형 \tabto{1.2cm} \texttt{w8385} \tabto{8cm} {\color{gray} 무소속}
+            \item 이창민 \tabto{1.2cm} \texttt{chleee} \tabto{8cm} {\color{gray} 숭실대학교 컴퓨터학부}
+            \item 조문성 \tabto{1.2cm} \texttt{jms020820} \tabto{8cm} {\color{gray} 숭실대학교 컴퓨터학부}
+            \item 진민성 \tabto{1.2cm} \texttt{m4ushold} \tabto{8cm} {\color{gray} 숭실대학교 소프트웨어학부}
+            \item 최도현 \tabto{1.2cm} \texttt{dohyonne} \tabto{8cm} {\color{gray} 숭실대학교 컴퓨터학부}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}%
+        \textbf{검수} %
+        \begin{itemize}
+            \item 강혜아 \tabto{1.2cm} \texttt{cologne} \tabto{8cm} {\color{gray} NEXON KOREA}
+            \item 김준겸 \tabto{1.2cm} \texttt{ryute} \tabto{8cm} {\color{gray} 고려대학교 컴퓨터학과}
+            \item 김준서 \tabto{1.2cm} \texttt{junseo} \tabto{8cm} {\color{gray} 채널코퍼레이션}
+            \item 나정휘 \tabto{1.2cm} \texttt{jhnah917} \tabto{8cm} {\color{gray} Quora}
+            \item 오주원 \tabto{1.2cm} \texttt{kyo20111} \tabto{8cm} {\color{gray} 삼성전자}
+            \item 정현서 \tabto{1.2cm} \texttt{jhwest2} \tabto{8cm} {\color{gray} 서울대학교 컴퓨터공학부}
+        \end{itemize}
+        \vspace{3mm}
+        \textbf{포스터/문제지 표지/명찰 디자인} %
+        \begin{itemize}
+            \item 송은서 \tabto{1.2cm} \texttt{eunseo03} \tabto{8cm} {\color{gray} 숭실대학교 컴퓨터학부}
+        \end{itemize}
+    \end{frame}
+    
+    \begin{frame}%
+        \textbf{대회 현장 스태프} %
+        \begin{itemize}
+            \item 강민희 \tabto{1.2cm} \texttt{mingnei} \tabto{8cm} {\color{gray} 숭실대학교 컴퓨터학부}
+            \item 김민성 \tabto{1.2cm} \texttt{minseongid} \tabto{8cm} {\color{gray} 숭실대학교 컴퓨터학부}
+            \item 김성주 \tabto{1.2cm} \texttt{rla777} \tabto{8cm} {\color{gray} 숭실대학교 컴퓨터학부}
+            \item 이서진 \tabto{1.2cm} \texttt{seojin329} \tabto{8cm} {\color{gray} 숭실대학교 컴퓨터학부}
+            \item 이시온 \tabto{1.2cm} \texttt{siooooooni} \tabto{8cm} {\color{gray} 숭실대학교 컴퓨터학부}
+            \item 진세림 \tabto{1.2cm} \texttt{qwerty1120} \tabto{8cm} {\color{gray} 숭실대학교 컴퓨터학부}
+            \item 최명일 \tabto{1.2cm} \texttt{fdsa313} \tabto{8cm} {\color{gray} 숭실대학교 컴퓨터학부}
+        \end{itemize}
+    \end{frame}
+    
+    \begin{frame}{\textbf{Sponsors}}
+        \begin{center}
+            \includegraphics[width=0.36\linewidth]{images/logos/Hanbitmedia CI.png}\\
+            % \vspace{7mm}
+            \includegraphics[width=0.36\linewidth]{images/logos/chanel.png}\\
+            % \vspace{7mm}
+            \includegraphics[width=0.36\linewidth]{images/logos/startlink.png}
+        \end{center}
+    \end{frame}
+    
+    \begin{frame} % No title at first slide
+        \begin{center}
+            \begin{tabular}{cl|l|l|l}
+                \hline
+                문제 & & 의도한 난이도 & 문제 아이디어 & 문제 작업 \\
+                \hline
+                \hline
+                \textbf{A} & 알파벳 블록 & \textbf{\color{acbronze} Easy} & 최도현 & 최도현 \\
+                \textbf{B} & 합의 최소 & \textbf{\color{acbronze} Easy} & 진민성 & 진민성 \\
+                \textbf{C} & 특별상 눈치게임 & \textbf{\color{acbronze} Easy} & 최도현 & 박근형 \\
+                \textbf{D} & N거리 건너기 & \textbf{\color{acsilver} Medium} & 김한결 & 김한결 \\
+                \textbf{E} & even하게 익은 SCON & \textbf{\color{acsilver} Medium} & 조문성 & 조문성 \\
+                \textbf{F} & $A = B \oplus C$ & \textbf{\color{acsilver} Medium} & 김서윤 &김서윤 \\
+                \textbf{G} & 불꽃놀이의 아름다움 2 & \textbf{\color{acgold} Hard} & 진민성 & 박근형 \\
+                \textbf{H} & 서로소 조합 & \textbf{\color{acgold} Hard} & 최도현 & 이창민 \\
+                \textbf{I} & 대결 & \textbf{\color{acgold} Hard} & 조문성 & 조문성 \\
+                \textbf{J} & 맛있는 스콘 만들기 & \textbf{\color{acplatinum} Challenging} & 최도현 & 최도현 \\
+                \hline
+            \end{tabular}
+        \end{center}
+    \end{frame}
+    
+    \import{solutions/}{A-alphabet-block.tex}
+    \import{solutions/}{B-seq-sum.tex}
+    \import{solutions/}{C-prize-game.tex}
+    \import{solutions/}{D-n-way-intersection.tex}
+    \import{solutions/}{E-even-sccc.tex}
+    \import{solutions/}{F-a-xor-b.tex}
+    \import{solutions/}{G-beautiful-fireworks-2.tex}
+    \import{solutions/}{H-coprime-combination.tex}
+    \import{solutions/}{I-devide_team.tex}
+    \import{solutions/}{J-delicious-scon.tex}
+
+    \begin{frame}{LLM 모델 테스트}
+        \begin{center}
+            \begin{tabular}{c|l|l|l|l|l|l}
+                문제 & GPT 4.1 & GPT 4.5 & Claude 3.7 & Claude 3.7 Rsn & Gemini 2.5 Pro & GPT o3 \\ \hline
+                A & \textcolor{red}{WA}  & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC} \\ \hline
+                B & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC} \\ \hline
+                C & \textcolor{red}{TLE} & \textcolor{red}{WA}  & \textcolor{acgreen}{AC}  & \textcolor{red}{TLE} & \textcolor{red}{TLE} & \textcolor{acgreen}{AC} \\ \hline
+                D & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC} \\ \hline
+                E & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC} \\ \hline
+                F & \textcolor{red}{WA}  & \textcolor{acgreen}{AC}  & \textcolor{red}{TLE} & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC} \\ \hline
+                G & \textcolor{red}{MLE} & \textcolor{red}{MLE} & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC} \\ \hline
+                H & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC}  & \textcolor{red}{TLE} & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC}  & \textcolor{acgreen}{AC} \\ \hline
+                I & \textcolor{red}{WA}  & \textcolor{red}{WA}  & \textcolor{acgreen}{AC}  & \textcolor{red}{TLE} & \textcolor{red}{TLE} & \textcolor{acgreen}{AC} \\ \hline
+                J & \textcolor{red}{TLE} & \textcolor{red}{TLE} & \textcolor{red}{TLE} & \textcolor{red}{TLE} & \textcolor{red}{TLE} & \textcolor{acgreen}{AC} \\ \hline
+                총점 & 4 & 6 & 7 & 7 & 7 & 10
+            \end{tabular}
+        \end{center}
+    \end{frame}
+    
+    \begin{frame} % No title
+        \begin{itemize}
+            \item 대회 문제의 모범 코드는 https://sccc.kr/scon/2025 에서 확인할 수 있습니다.
+            \item 감사합니다.
+        \end{itemize}
+    \end{frame}
+\end{document}

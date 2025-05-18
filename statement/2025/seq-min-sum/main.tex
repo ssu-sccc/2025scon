@@ -1,0 +1,45 @@
+\def\probtitle{합의 최소}
+\def\probno{B} % 문제 번호
+
+\begin{problem}{\probno{}. \probtitle{}}
+
+길이가 $N$인 정수로 구성된 수열 $A_1, A_2, ..., A_N$이 주어진다.
+
+당신은 아래 연산을 0번 이상 사용하여 수열의 모든 원소들의 합 $\displaystyle\sum_{i=1}^N A_i$를 최소화하려고 한다.
+
+\begin{itemize}[topsep=0pt,noitemsep]
+  \item $1$ 이상 $N-1$ 이하인 정수 $i$를 선택한 뒤, $A_i$의 값을 $A_{i+1}$로 변경한다.
+\end{itemize}
+
+만들 수 있는 수열의 합의 최솟값을 구해보자.
+
+\InputFile
+
+첫째 줄에 수열의 길이 $N$이 주어진다.
+
+둘째 줄에 수열의 원소 $A_1, A_2, \cdots, A_N$이 공백으로 구분되어 주어진다.
+
+\OutputFile
+
+수열의 합의 최솟값을 출력한다.
+
+\Constraints
+
+\begin{itemize}[topsep=0pt,noitemsep]
+    \item $1 \leq N \leq 500\,000$
+    \item $1 \le A_i \le 1\,000\,000$ ($1 \le i \le N$)
+    \item 입력으로 주어지는 수는 모두 정수이다.
+\end{itemize}
+
+\Example
+
+\begin{example}
+    \exmpfile{./example/01.in.txt}{./example/01.out.txt}%
+    \exmpfile{./example/02.in.txt}{./example/02.out.txt}%
+\end{example}
+
+\Notes
+
+정답이 32비트 정수 범위를 넘을 수 있으므로, C/C++에서는 \t{long long}, Java에서는 \t{long}과 같은 자료형을 사용하는 것을 권장한다.
+
+\end{problem}

@@ -1,0 +1,38 @@
+\def\probtitle{A = B ⊕ C}
+\def\probno{F} % 문제 번호
+
+\begin{problem}{\probno{}. \probtitle{}}
+
+$X$개의 $1$과 $Y$개의 $0$을 사용해 길이가 $X+Y$(단, $X+Y$는 3의 배수)인 수열을 만들려고 한다. 아래 조건을 만족하도록 길이가 $X+Y$인 수열 $A = \left\{A_1, A_2, \cdots, A_{X+Y}\right\}$를 구성하는 경우의 수를 구해보자.
+
+\begin{itemize}[topsep=0pt,noitemsep]
+    \item $1 \le k \le (X+Y)/3$인 모든 정수 $k$에 대해 $A_{3k-2} = A_{3k-1} \oplus A_{3k}$
+    \item 즉, $A_1 = A_2 \oplus A_3$, $A_4 = A_5 \oplus A_6$, $\cdots$, $A_{X+Y-2} = A_{X+Y-1} \oplus A_{X+Y}$
+\end{itemize}
+
+$\oplus$는 배타적 논리합(XOR) 연산자이다. 즉, 두 피연산자의 값이 다르면 연산의 결과는 $1$, 같으면 $0$이다.
+
+\InputFile
+첫째 줄에 정수 $X$, $Y$가 공백으로 구분되어 주어진다.
+
+\OutputFile
+수열을 구성하는 경우의 수를 출력한다. 단, 답이 매우 커질 수 있으므로 $1\,000\,000\,007(= 10^9+7)$로 나눈 나머지를 출력한다.
+
+\Constraints
+
+\begin{itemize}[topsep=0pt,noitemsep]
+    \item $0 \le X,Y \le 3\,000$
+    \item $X+Y$는 3의 배수이다.
+    \item $X+Y \ge 3$
+    \item 입력으로 주어지는 수는 모두 정수이다.
+\end{itemize}
+
+\Examples
+
+\begin{example}
+\exmpfile{./example/01.in.txt}{./example/01.out.txt}%
+\exmpfile{./example/02.in.txt}{./example/02.out.txt}%
+\exmpfile{./example/03.in.txt}{./example/03.out.txt}%
+\end{example}
+
+\end{problem}
